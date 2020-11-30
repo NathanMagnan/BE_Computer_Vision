@@ -1,0 +1,25 @@
+%% load the images
+image_stripes = imread("Stripes.png");
+image_real = imread("SpainBeach.jpg");
+
+%% apply blur filtering
+h_blur = fspecial('average');
+image_stripes_blurred = imfilter(image_stripes, h_blur);
+image_real_blurred = imfilter(image_real, h_blur);
+
+
+%% apply Edge filtering
+h_edges = fspecial('Laplacian', alpha = 0);
+image_strips_edges = imfilter(image_stripes, h_edges);
+image_real_edges = imfilter(image_real, h_edges);
+
+%% display the images
+figure(1);
+subplot(3, 2, 1);
+imshow(image_stripes);
+subplot(3, 2, 2);
+imshow(image_real);
+subplot(3, 2, 3);
+imshow(image_stripes_blurred);
+subplot(3, 2, 4);
+imshow(image_real_blurred);

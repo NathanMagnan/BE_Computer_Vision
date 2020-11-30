@@ -1,0 +1,10 @@
+%% load the 2 images
+image_beach = imread("SpainBeach.png");
+image_toulouse = imread("toulouse.bmp");
+
+%% plot the image and the histogram of the rectangle image
+figure(1)
+subplot(1,2,1);
+imshow(image_beach);
+subplot(1,2,2);
+imhist(image_beach);
